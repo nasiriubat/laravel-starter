@@ -20,10 +20,4 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::post('/login',function(Request $request){
-    // dd($request->all());
-    $token = auth('api')->attempt($request->only('email', 'password'));
-    dd($token);
-
-});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
